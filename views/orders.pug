@@ -1,0 +1,25 @@
+extends layout
+
+block layout-content
+    body(style="background-color: #e4c1f9;")
+        div.View
+            h1.Banner #{title}
+            .grid 
+                section.part
+                    each order in orders
+                        div.item
+                            h5= `#${order.orderId || "No Data"}`
+                            h3= `${order.purchaseDate || "No Data"}`
+                            a(href=`/customer/${order.customerId}`)
+                                h3= `Customer: #${order.customerId || "No Data"}`
+                            each product in order.products
+                                a(href=`/product/${product.stockCode}`)
+                                    div= `${product.stockCode || "No Data"}`
+                            
+            div.NavButtons
+                a(href= prev)
+                    div.PrevButton Prev
+
+            div.NavButtons
+                a(href= next)
+                    div.NextButton Next

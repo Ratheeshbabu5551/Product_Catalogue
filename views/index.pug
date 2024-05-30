@@ -1,0 +1,13 @@
+extends layout
+
+block layout-content
+    body(style="background-color: #fcf6bd;")
+        div.View.WelcomeView
+            h1.Banner Online Retail Store - Admin Panel
+            div.NavButtons
+            a(href="/products")
+                div.NavButton Products Catalog
+            a(href="/customers")
+                div.NavButton Customer Catalog
+            a(href="/orders")
+                div.NavButton Orders Catalog

@@ -1,0 +1,15 @@
+extends layout
+
+block layout-content
+    body(style="background-color: #f7d1cd;")
+        div.View
+            h1.Banner #{title}
+            .grid 
+                section.part
+                    div.item
+                        h5= `#${customer.customerId || "No Data"}`
+                        img(src=`https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/${countries[customer.country] || "CA"}.svg`)
+                        h3= `${customer.name || "No Data"}`
+        div.NavButtons
+            a(href="/")
+                div.BackButton Go Back

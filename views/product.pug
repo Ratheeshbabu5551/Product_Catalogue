@@ -1,0 +1,15 @@
+extends layout
+
+block layout-content
+    body(style="background-color: #ff99c8;")
+        div.View
+            h1.Banner #{title}
+            .grid 
+                section.part
+                        div.item
+                            h5= `#${product.stockCode || "No Data"}`
+                            h3= `${product.productName || "No Data"}`
+                            h2= `$${product.unitPrice || "No Data"}`
+            div.NavButtons
+                a(href="/")
+                    div.BackButton Home
